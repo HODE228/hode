@@ -1,0 +1,328 @@
+/* Styles de base */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 20px 40px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.logo-text {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.background-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.background-icons i {
+    font-size: 1rem;
+    position: absolute;
+    opacity: 0.7;
+    animation: float 4s infinite ease-in-out;
+    animation-delay: calc(var(--random-delay) * 1s);
+    top: calc(var(--random-top) * 1%);
+    left: calc(var(--random-left) * 1%);
+    color: #fff;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(calc(var(--random-x) * 1%), 0); }
+    50% { transform: translate(calc(var(--random-x) * 0.5%), -20px); }
+}
+
+.background-icons i::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: trace 4s infinite ease-in-out;
+    animation-delay: calc(var(--random-delay) * 1s);
+}
+
+@keyframes trace {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+section {
+    padding: 60px 20px;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-card i {
+    font-size: 3em;
+    color: #6a11cb;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover i {
+    color: #2575fc;
+}
+
+.service-card h3 {
+    font-size: 1.8em;
+    margin: 15px 0;
+    color: #333;
+}
+
+.service-card p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.contact-info a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #fff;
+}
+
+/* Widget flottant des réseaux sociaux */
+.social-widget {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.social-widget a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-widget a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-widget .pinterest {
+    background-color: #E60023;
+}
+
+.social-widget .facebook {
+    background-color: #1877F2;
+}
+
+.social-widget .instagram {
+    background-color: #E4405F;
+}
+
+.social-widget .whatsapp {
+    background-color: #25D366;
+}
+
+.social-widget .tiktok {
+    background-color: #000000;
+}
+
+.emoji-offer {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    font-size: 3em;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.emoji-offer img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: float 4s infinite ease-in-out;
+}
+
+.offer-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+}
+
+.offer-modal h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.offer-modal p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Styles pour la galerie */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover; /* Pour s'assurer que les images remplissent bien la carte */
+    height: 200px; /* Hauteur fixe pour uniformiser les cartes */
+}
+
+/* Styles pour les cartes de la galerie */
+.gallery-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Pour que l'image ne dépasse pas de la carte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Optionnel : Ajouter un texte sous les images */
+.gallery-card p {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin: 0;
+}
